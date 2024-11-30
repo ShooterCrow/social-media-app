@@ -1,17 +1,19 @@
 import { Avatar, Flex, Tooltip, Link, Box } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import { AiFillHome } from "react-icons/ai";
+import { LuHome } from "react-icons/lu";
+
 import {
   CreatePostLogo,
   InstagramLogo,
   NotificationsLogo,
   SearchLogo,
 } from "../assets/constants";
+import SideBarItem from "./SideBarItem";
 
 const BarComponents = ({ sideBar, dir, dir2, len }) => {
   const components = [
     {
-      icon: <AiFillHome />,
+      icon: <LuHome />,
       text: "Home",
       link: "/",
     },
@@ -28,7 +30,7 @@ const BarComponents = ({ sideBar, dir, dir2, len }) => {
       text: "Create Post",
     },
     {
-      icon: <Avatar />,
+      icon: <Avatar name="Profile Photo" size={"xs"} />,
       text: "Profile",
       link: "/asaprojrammer",
     },
@@ -41,26 +43,15 @@ const BarComponents = ({ sideBar, dir, dir2, len }) => {
       alignItems="center"
       w="full"
       h={sideBar ? "auto" : "10vh"}
-      px={4}
-      bg="gray.900"
     >
       {components.map((component, index) => {
         return sideBar ? (
-          <Link
-            p={2}
-            display={"flex"}
-            to={component.link || null}
-            as={RouterLink}
-            gap={4}
-            _hover={{ bg: "whiteAlpha.400", textDecor: "none" }}
-            borderRadius={6}
-            w={"full"}
-            direction={dir2}
-            key={index}
-          >
-            {component.icon}
-            <Box>{component.text}</Box>
-          </Link>
+          <SideBarItem 
+          link={component.link}
+          icon={component.icon}
+          text={component.text}
+          key={index} />
+       
         ) : (
           <Tooltip
             key={index}
