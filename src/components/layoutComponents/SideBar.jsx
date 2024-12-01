@@ -28,7 +28,7 @@ const SideBar = () => {
 
       <Box>
         <SideBarItem
-          link={"IoMdLogOut"}
+          link={"/auth"}
           icon={<RiLogoutBoxLine />}
           text={"Logout"}
         />

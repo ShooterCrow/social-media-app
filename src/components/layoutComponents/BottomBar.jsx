@@ -8,12 +8,13 @@ const BottomBar = () => {
     <Box
       w={"100vw"}
       borderTop={"1px solid"}
-      py={6}
+      py={3}
       borderColor={"whiteAlpha.300"}
-      position={"sticky"}
-      top={0}
+      position={"fixed"}
       bottom={0}
+      left={0}
       px={2}
+      bg={"black"}
     >
       <Flex alignItems={"center"} w={"100%"} direction={"row"}>
         <BarComponents sideBar={false} dir={"row"} />
