@@ -8,40 +8,18 @@ const Layout = ({ children }) => {
   const { pathname } = useLocation();
   return (
     <>
-      <Flex
-        display={{
-          base: "flex",
-          md: "none",
-        }}
-        h={"100vh"}
-        alignItems={"center"}
-        direction={"column"}
-      >
+      <Flex display={{ base: "flex", md: "none", }} h={"100vh"} alignItems={"center"} direction={"column"} >
         {/* Top Side */}
         <Box flex={1}>{children}</Box>
-        {/* Bottom Side */}
-        {pathname === "/auth" ? null : (
-          <Box>
-            <BottomBar />
-          </Box>
-        )}
+        {/* Bottom Bar */}
+        {pathname === "/auth" ? null : (<Box> <BottomBar /> </Box>)}
       </Flex>
 
       {/* Desktop display */}
-      <Flex
-        display={{
-          base: "none",
-          md: "flex",
-        }}        
-      >
-        {/* Bottom Side */}
-        {pathname === "/auth" ? null : (
-          <Box w={"270px"}>
-            <SideBar />
-          </Box>
-        )}
-
-        {/* Top Side */}
+      <Flex display={{ base: "none", md: "flex", }}>
+        {/* SideBar */}
+        {pathname === "/auth" ? null : (<Box w={"250px"} maxW={"25%"}> <SideBar /> </Box>)}
+        {/* Main Content Side */}
         <Box flex={1}>{children}</Box>
       </Flex>
     </>

@@ -7,6 +7,7 @@ const BottomBar = () => {
   return (
     <Box
       w={"100vw"}
+      minW={"100%"}
       borderTop={"1px solid"}
       py={3}
       borderColor={"whiteAlpha.300"}
