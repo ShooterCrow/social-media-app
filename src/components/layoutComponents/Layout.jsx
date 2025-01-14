@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   const { pathname } = useLocation();
   return (
     <>
-      <Flex display={{ base: "flex", md: "none", }} h={"100vh"} alignItems={"center"} direction={"column"} >
+      <Flex w={"full"} display={{ base: "flex", md: "none", }} h={"100vh"} alignItems={"center"} direction={"column"} >
         {/* Top Side */}
         <Box flex={1}>{children}</Box>
         {/* Bottom Bar */}
